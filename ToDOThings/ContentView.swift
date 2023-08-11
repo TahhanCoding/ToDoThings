@@ -9,36 +9,28 @@ import SwiftUI
 
 struct ContentView: View {
     
+    let images = ["welcome1", "welcome2", "welcome3"]
     @State private var selectedImageIndex = 0
 
-    
     var body: some View {
         
-        let images = ["welcome1", "welcome2", "welcome3"]
-
         VStack {
+            // Banner Gallery
             VStack {
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack(spacing: 0) {
-                        ForEach(0..<3) { index in
-                            Image(images[index])
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: UIScreen.main.bounds.width)
-                                .cornerRadius(10)
-                                .onTapGesture {
-                                    selectedImageIndex = index
-                                    print("hello \(index)")
-                                }
-                        }
+                TabView(selection: $selectedImageIndex){
+                    ForEach(0..<3) { index in
+                        Image(images[index])
+                            .resizable()
+                            .scaledToFit()
+                            .tag(index)
                     }
                 }
-                .padding(.horizontal)
-
-                HStack(spacing: 5) {
+                .tabViewStyle(PageTabViewStyle())
+                HStack() {
                     ForEach(0..<3) { index in
                         Rectangle()
-                            .frame(width: 10, height: 4)
+                            .frame(width: 20, height: 9)
+                            .cornerRadius(10)
                             .foregroundColor(selectedImageIndex == index ? Color(hex: "FFB711") : Color(hex: "FBE08A"))
                     }
                 }
