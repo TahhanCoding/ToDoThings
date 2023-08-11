@@ -8,16 +8,95 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State private var selectedImageIndex = 0
+
+    
     var body: some View {
+        
+        let images = ["welcome1", "welcome2", "welcome3"]
+
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            VStack {
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack(spacing: 0) {
+                        ForEach(0..<3) { index in
+                            Image(images[index])
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: UIScreen.main.bounds.width)
+                                .cornerRadius(10)
+                                .onTapGesture {
+                                    selectedImageIndex = index
+                                    print("hello \(index)")
+                                }
+                        }
+                    }
+                }
+                .padding(.horizontal)
+
+                HStack(spacing: 5) {
+                    ForEach(0..<3) { index in
+                        Rectangle()
+                            .frame(width: 10, height: 4)
+                            .foregroundColor(selectedImageIndex == index ? Color(hex: "FFB711") : Color(hex: "FBE08A"))
+                    }
+                }
+            }
+            .padding()
+            
+            Text("Manage Your Daily TODO")
+                .font(.largeTitle)
+                .fontWeight(.heavy)
+            Text("Efficiently Organize and Conquer Your Daily Tasks, Easy handling, let's go!")
+                .font(.caption2)
+                .fontWeight(.regular)
+                .foregroundColor(.gray)
+                .padding(10)
+                .multilineTextAlignment(.center)
+            
+            // Button Create A Note
+            ZStack {
+                Rectangle()
+                    .foregroundColor(Color(hex: "FFB711"))
+                    .frame(width: 270, height: 60)
+                    .cornerRadius(10)
+                    .shadow(color: Color.black.opacity(0.7), radius: 4, x: 0, y: 2)
+                
+                Button(action: {
+                    // Create A Note
+                    
+                    
+                }) {
+                    Text("Create A Note")
+                        .font(.headline)
+                        .foregroundColor(.white)
+                }
+            }
+            
+            // Button Import Notes
+            ZStack {
+                Rectangle()
+                    .foregroundColor(.white)
+                    .frame(width: 270, height: 60)
+                
+                Button(action: {
+                    // import notes
+                    
+                    
+                }) {
+                    Text("Import Notes")
+                        .font(.headline)
+                        .foregroundColor(Color(hex: "FFB711"))
+                }
+            }
+            
+            
+            
         }
-        .padding()
     }
 }
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
