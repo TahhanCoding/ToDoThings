@@ -58,9 +58,7 @@
 			isa = PBXGroup;
 			children = (
 				325F083B2A86B11B00BE64B8 /* ToDOThingsApp.swift */,
-				325F083D2A86B11B00BE64B8 /* SplashScreen.swift */,
-				32D906F12A879B4500D6ECA5 /* HomeScreen.swift */,
-				32D906F32A87D35C00D6ECA5 /* CardView.swift */,
+				32D906F52A87DD7E00D6ECA5 /* Views */,
 				325F08492A86C9B400BE64B8 /* Extensions.swift */,
 				325F083F2A86B11C00BE64B8 /* Assets.xcassets */,
 				325F08412A86B11C00BE64B8 /* Preview Content */,
@@ -74,6 +72,16 @@
 				325F08422A86B11C00BE64B8 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		32D906F52A87DD7E00D6ECA5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				325F083D2A86B11B00BE64B8 /* SplashScreen.swift */,
+				32D906F12A879B4500D6ECA5 /* HomeScreen.swift */,
+				32D906F32A87D35C00D6ECA5 /* CardView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
