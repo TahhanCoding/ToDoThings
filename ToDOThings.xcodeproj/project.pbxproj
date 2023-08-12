@@ -13,6 +13,7 @@
 		325F08432A86B11C00BE64B8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 325F08422A86B11C00BE64B8 /* Preview Assets.xcassets */; };
 		325F084A2A86C9B400BE64B8 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325F08492A86C9B400BE64B8 /* Extensions.swift */; };
 		32D906F22A879B4500D6ECA5 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D906F12A879B4500D6ECA5 /* HomeScreen.swift */; };
+		32D906F42A87D35C00D6ECA5 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D906F32A87D35C00D6ECA5 /* CardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		325F08422A86B11C00BE64B8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		325F08492A86C9B400BE64B8 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		32D906F12A879B4500D6ECA5 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
+		32D906F32A87D35C00D6ECA5 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 				325F083B2A86B11B00BE64B8 /* ToDOThingsApp.swift */,
 				325F083D2A86B11B00BE64B8 /* SplashScreen.swift */,
 				32D906F12A879B4500D6ECA5 /* HomeScreen.swift */,
+				32D906F32A87D35C00D6ECA5 /* CardView.swift */,
 				325F08492A86C9B400BE64B8 /* Extensions.swift */,
 				325F083F2A86B11C00BE64B8 /* Assets.xcassets */,
 				325F08412A86B11C00BE64B8 /* Preview Content */,
@@ -147,6 +150,7 @@
 				325F083E2A86B11B00BE64B8 /* SplashScreen.swift in Sources */,
 				325F084A2A86C9B400BE64B8 /* Extensions.swift in Sources */,
 				325F083C2A86B11B00BE64B8 /* ToDOThingsApp.swift in Sources */,
+				32D906F42A87D35C00D6ECA5 /* CardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -69,8 +69,37 @@ struct HomeScreen: View {
 
             .shadow(color: Color.gray.opacity(0.2), radius: 4, x: 0, y: 5)
 
+            HStack {
+                Text("My Priority Task")
+                    .fontWeight(.bold)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding()
 
+                Button(action: {
+                    // to this filter
+
+
+                }) {
+                    Text("All Tasks >")
+                        .foregroundColor(.black)
+                        .font(.footnote)
+                }
+                .padding()
+
+            }
         
+            
+            ScrollView(.horizontal) {
+                LazyHStack(spacing: 16) {
+                    ForEach(0..<10) { index in
+                        Rectangle()
+                            .fill(Color.blue)
+                            .frame(width: 152, height: 190)
+                            .cornerRadius(10)
+                    }
+                }
+                .padding()
+            }
             
             
             
