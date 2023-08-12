@@ -20,7 +20,6 @@ struct CardView: View {
                 .cornerRadius(10)
             Image("cardMask")
             
-            
             HStack {
                 VStack(spacing: 10) {
                     Group {
@@ -50,9 +49,15 @@ struct CardView: View {
                 
                 // Menu dots
                 VStack() {
-                    Image(systemName: "ellipsis")
-                        .foregroundColor(.white)
-                        .rotationEffect(.degrees(-90))
+                    Button(action: {
+                        // do this
+
+
+                    }) {
+                        Image(systemName: "ellipsis")
+                            .foregroundColor(.white)
+                            .rotationEffect(.degrees(-90))
+                    }
                 }
                 .frame(maxHeight: .infinity, alignment: .top)
                 .padding(.top, 15)

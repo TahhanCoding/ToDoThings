@@ -15,7 +15,7 @@ struct TaskTape: View {
         VStack {
             HStack {
                 // title
-                Text("Mobile App Design")
+                Text("UX Design")
                     .fontWeight(.medium)
                     .foregroundColor(.black)
                 
@@ -35,12 +35,18 @@ struct TaskTape: View {
                 
                 // menu dots
                 VStack() {
-                    Image(systemName: "ellipsis")
-                        .foregroundColor(.black)
-                        .rotationEffect(.degrees(-90))
-                }
-                .frame(maxHeight: .infinity, alignment: .top)
-                .padding(.top, 15)
+                    Button(action: {
+                        // do this
+
+
+                    }) {
+                        Image(systemName: "ellipsis")
+                            .foregroundColor(.black)
+                            .rotationEffect(.degrees(-90))
+                    }
+                    .frame(maxHeight: .infinity, alignment: .top)
+                    .padding(.top, 15)
+                    }
             }
             
             Spacer()

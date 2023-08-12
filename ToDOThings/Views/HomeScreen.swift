@@ -54,7 +54,7 @@ struct HomeScreen: View {
                         .frame(width: 30, height: 30)
 
                     Button(action: {
-                        // to this filter
+                        // do this filter
 
 
                     }) {
@@ -78,7 +78,7 @@ struct HomeScreen: View {
                     .padding()
 
                 Button(action: {
-                    // to this filter
+                    // do this filter
 
 
                 }) {
@@ -115,7 +115,7 @@ struct HomeScreen: View {
                     .padding()
 
                 Button(action: {
-                    // to this filter
+                    // do this filter
 
 
                 }) {
