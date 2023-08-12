@@ -144,6 +144,24 @@ struct HomeScreen: View {
                     .frame(height: 40)
                 }
             }
+            
+            ScrollView(.vertical) {
+                LazyVStack(spacing: 16) {
+                    ForEach(0..<5) { index in
+                        // NOTE: This coloring approach is just to show UI
+                        if index == 0 {
+                            TaskTape()
+                        }
+                        if index%2 == 0 {
+                            TaskTape(urgent: true, label: "Progress", labelColor: .orange)
+                        } else {
+                            TaskTape()
+                        }
+                    }
+                }
+                .padding()
+            }
+
 
             
         

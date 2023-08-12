@@ -9,7 +9,9 @@ import SwiftUI
 
 struct TaskTape: View {
     
-
+    @State var urgent: Bool = false
+    @State var label: String = "To do"
+    @State var labelColor: Color = .blue
     var body: some View {
 
         VStack {
@@ -23,11 +25,12 @@ struct TaskTape: View {
                 // category
                 ZStack {
                     Rectangle()
-                        .foregroundColor(Color(hex: "F1A800"))
+                        .foregroundColor(labelColor)
                         .frame(width: 56, height: 20)
                         .cornerRadius(10)
-                    Text("Progress")
+                    Text(label)
                         .font(.caption2)
+                        .foregroundColor(.white)
                 }
 
                 
@@ -61,13 +64,14 @@ struct TaskTape: View {
                 .font(.footnote)
                 
                 // urgent
-                HStack {
-                    Image(systemName: "flag.fill")
-                    Text("Urgent")
+                if urgent {
+                    HStack {
+                        Image(systemName: "flag.fill")
+                        Text("Urgent")
+                    }
+                    .foregroundColor(.red)
+                    .font(.footnote)
                 }
-                .foregroundColor(.red)
-                .font(.footnote)
-
                 
                 Spacer()
             }
