@@ -14,7 +14,7 @@ struct HomeScreen: View {
     var body: some View {
         VStack {
             
-            // welcome
+            //MARK: - welcome
             HStack {
                 VStack {
                     Text("Welcome to Notes")
@@ -33,7 +33,7 @@ struct HomeScreen: View {
                     .padding()
             }
             
-            // search bar
+            //MARK: - search bar
             HStack {
                 Image(systemName: "magnifyingglass")
                     .foregroundColor(.black)
@@ -88,7 +88,7 @@ struct HomeScreen: View {
 
             }
         
-            
+            // MARK: - Notes Cards
             ScrollView(.horizontal) {
                 LazyHStack(spacing: 16) {
                     ForEach(0..<10) { index in

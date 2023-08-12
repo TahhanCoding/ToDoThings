@@ -13,13 +13,13 @@ struct CardView: View {
     
     var body: some View {
         ZStack {
-            // Background Frame
+            //MARK: - Background
             Rectangle()
                 .fill(Color.blue)
                 .cornerRadius(10)
             Image("cardMask")
             
-            // Content
+            
             HStack {
                 VStack(spacing: 10) {
                     Group {
@@ -46,7 +46,8 @@ struct CardView: View {
                     
                 }
                 .padding(.leading, 10)
-                // Menu dots ...
+                
+                // Menu dots
                 VStack() {
                     Image(systemName: "ellipsis")
                         .foregroundColor(.white)
