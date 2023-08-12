@@ -9,8 +9,10 @@ import SwiftUI
 
 struct HomeScreen: View {
     
-    @State var searchText: String = ""
-    
+    @State private var searchText: String = ""
+    @AppStorage("filter") private var filter: String = "Today's Task"
+    private let filters = ["Today's Task", "Monthly Task", "Yearly Task"]
+
     var body: some View {
         VStack {
             
@@ -106,6 +108,43 @@ struct HomeScreen: View {
                 .padding()
             }
             
+            HStack {
+                Text("My Tasks")
+                    .fontWeight(.bold)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding()
+
+                Button(action: {
+                    // to this filter
+
+
+                }) {
+                    Text("See All >")
+                        .foregroundColor(.black)
+                        .font(.footnote)
+                }
+                .padding()
+            }
+
+            HStack(spacing: 55) {
+                ForEach(filters, id:\.self) { filter in
+                    Button(action: {
+                        self.filter = filter
+                    }) {
+                        
+                        VStack {
+                            Text(filter)
+                                .font(.footnote)
+                            Rectangle()
+                                .frame(width: 18, height: 3)
+                        }
+                    }
+                    .foregroundColor(self.filter == filter ? Color.black : Color.gray.opacity(0.9))
+                    .fontWeight(.bold)
+                    .frame(height: 40)
+                }
+            }
+
             
         
         
