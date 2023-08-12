@@ -59,6 +59,7 @@ struct SplashScreen: View {
                     // Create A Note
                     
                     
+                    
                 }) {
                     Text("Create A Note")
                         .font(.headline)
