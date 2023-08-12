@@ -10,12 +10,13 @@ import SwiftUI
 struct CardView: View {
     
     @State var searchText: String = ""
+    @State var cardColor: Color = Color.blue
     
     var body: some View {
         ZStack {
             //MARK: - Background
             Rectangle()
-                .fill(Color.blue)
+                .fill(cardColor)
                 .cornerRadius(10)
             Image("cardMask")
             

@@ -91,16 +91,20 @@ struct HomeScreen: View {
             // MARK: - Notes Cards
             ScrollView(.horizontal) {
                 LazyHStack(spacing: 16) {
-                    ForEach(0..<10) { index in
-                        Rectangle()
-                            .fill(Color.blue)
-                            .frame(width: 152, height: 190)
-                            .cornerRadius(10)
+                    ForEach(0..<5) { index in
+                        // NOTE: This coloring approach is just to show UI
+                        if index == 0 {
+                            CardView(cardColor: Color(hex: "F1A800"))
+                        }
+                        if index%2 == 0 {
+                            CardView(cardColor: Color(hex: "5486E9"))
+                        } else {
+                            CardView(cardColor: Color(hex: "FFB185"))
+                        }
                     }
                 }
                 .padding()
             }
-            
             
             
         
