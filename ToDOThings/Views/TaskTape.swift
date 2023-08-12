@@ -12,36 +12,28 @@ struct TaskTape: View {
 
     var body: some View {
 
-            
+        VStack {
             HStack {
-                Group {
-                    VStack(alignment: .leading) {
-                        Text("Mobile App Design")
-                            .fontWeight(.medium)
-                            .foregroundColor(.black)
-
-                        
-                        
-                        Spacer()
-                        
-                        HStack {
-                            Image(systemName: "calendar")
-                            Text("Sun 20 Aug, 10:00 AM")
-                        }
-                        .foregroundColor(.gray.opacity(0.8))
-                        .font(.footnote)
-
-                        
-                    }
-                    .padding(.leading, 15)
-                    .padding(.bottom, 5)
-                    .padding(.top, 5)
-
-
-                }
-                .frame(maxWidth: .infinity, alignment: .leading)
+                // title
+                Text("Mobile App Design")
+                    .fontWeight(.medium)
+                    .foregroundColor(.black)
                 
-                // Menu dots
+                
+                // category
+                ZStack {
+                    Rectangle()
+                        .foregroundColor(Color(hex: "F1A800"))
+                        .frame(width: 56, height: 20)
+                        .cornerRadius(10)
+                    Text("Progress")
+                        .font(.caption2)
+                }
+
+                
+                Spacer()
+                
+                // menu dots
                 VStack() {
                     Image(systemName: "ellipsis")
                         .foregroundColor(.black)
@@ -50,13 +42,35 @@ struct TaskTape: View {
                 .frame(maxHeight: .infinity, alignment: .top)
                 .padding(.top, 15)
             }
-            .background(Color(.white))
-            .frame(width: 340, height: 71)
-            .cornerRadius(5)
-            .shadow(color: Color.gray.opacity(0.2), radius: 4, x: 0, y: 5)
+            
+            Spacer()
+            
+            HStack {
+                // date
+                HStack {
+                    Image(systemName: "calendar")
+                    Text("Sun 20 Aug, 10:00 AM")
+                }
+                .foregroundColor(.gray.opacity(0.8))
+                .font(.footnote)
+                
+                // urgent
+                HStack {
+                    Image(systemName: "flag.fill")
+                    Text("Urgent")
+                }
+                .foregroundColor(.red)
+                .font(.footnote)
 
-
-
+                
+                Spacer()
+            }
+        }
+        .padding(5)
+        .background(Color(.white))
+        .frame(width: 340, height: 71)
+        .cornerRadius(5)
+        .shadow(color: Color.gray.opacity(0.2), radius: 4, x: 0, y: 5)
 
 
 
