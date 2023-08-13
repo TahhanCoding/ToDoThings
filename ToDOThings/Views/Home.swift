@@ -13,8 +13,6 @@ struct Home: View {
     @State private var selectedTab: Int = 0
 
     var body: some View {
-        
-        
         TabView(selection: $selectedTab) {
             NavigationView {
                 HomeScreen()
@@ -23,15 +21,11 @@ struct Home: View {
                 Image(systemName: "house.fill")
             }
             .tag(0)
-
-            
-            
             Text("done notes")
                 .tabItem {
                     Image(systemName: "checkmark.square.fill")
                 }
                 .tag(1)
-            
             NavigationView {
                 AddNote()
             }
@@ -61,7 +55,6 @@ struct Home: View {
         .onAppear {
             selectedTab = 2
         }
-        
     }
 }
 
