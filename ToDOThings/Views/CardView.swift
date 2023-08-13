@@ -14,12 +14,13 @@ struct CardView: View {
     
     var body: some View {
         ZStack {
-            //MARK: - Background
+            // background
             Rectangle()
                 .fill(cardColor)
-                .cornerRadius(10)
+                .cornerRadius(15)
             Image("cardMask")
             
+            // content
             HStack {
                 VStack(spacing: 10) {
                     Group {

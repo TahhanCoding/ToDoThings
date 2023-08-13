@@ -54,7 +54,7 @@ struct HomeScreen: View {
                         .frame(width: 30, height: 30)
 
                     Button(action: {
-                        // do this filter
+                        // do this 
 
 
                     }) {
@@ -78,7 +78,7 @@ struct HomeScreen: View {
                     .padding()
 
                 Button(action: {
-                    // do this filter
+                    // do this
 
 
                 }) {
@@ -107,6 +107,7 @@ struct HomeScreen: View {
                 }
                 .padding()
             }
+            .frame(height: 190)
             
             HStack {
                 Text("My Tasks")
@@ -115,7 +116,7 @@ struct HomeScreen: View {
                     .padding()
 
                 Button(action: {
-                    // do this filter
+                    // do this
 
 
                 }) {
@@ -161,12 +162,6 @@ struct HomeScreen: View {
                 }
                 .padding()
             }
-
-
-            
-        
-        
-
         }
     }
 }

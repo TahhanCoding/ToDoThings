@@ -8,21 +8,14 @@
 import SwiftUI
 
 struct AddNote: View {
-    let priorities = ["High", "Medium", "Low"]
     @State private var title: String = ""
-    @State private var dummyDescription: String = "example description example description example description example description example description example description example description"
-
     @State private var priority: String = "High"
-    @State private var fromTime = 1
-    @State private var toTime = 2
-    
-    @State private var selectedHour = 1
-    @State private var isPopoverVisible = false
-    let hours = 1...12 // Change this range as needed
-
+    @State private var dummyDescription: String = "example description example description example description example description example description example description example description"
     let days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
     let daysDates = ["15", "16", "17", "18", "19", "20", "21"]
-
+    let priorities = ["High", "Medium", "Low"]
+    
+    
     var body: some View {
         VStack(spacing: 5) {
             
@@ -31,14 +24,16 @@ struct AddNote: View {
                 Image("menus")
                 Spacer()
                 Text("Create New Task")
-                        .font(.title3)
-                        .fontWeight(.bold)
+                    .font(.title3)
+                    .fontWeight(.bold)
                 Spacer()
                 Image("profileImage")
             }
             .padding()
             .frame(maxHeight: .infinity, alignment: .top)
-
+            
+            
+            //MARK: - Calendar
             VStack(spacing: 40) {
                 HStack {
                     VStack {
@@ -61,38 +56,36 @@ struct AddNote: View {
                             .foregroundColor(.black.opacity(0.5))
                     }
                 }
-                    HStack(spacing: 25) {
-                        ForEach(0..<days.count, id: \.self) { index in
-                            VStack(spacing: 8) {
-                                Text(daysDates[index])
-                                    .font(.subheadline)
-                                    .foregroundColor(index == 2 ? Color.white : Color.gray)
-                                Text(days[index])
-                                    .font(.subheadline)
-                                    .foregroundColor(index == 2 ? Color.white : Color.gray)
-
-                            }
-                            .background(
-                                RoundedRectangle(cornerRadius: 20)
-                                    .foregroundColor(index == 2 ? Color(hex: "F1A800") : Color.clear)
-                                    .frame(width: 40 ,height: 60)
-                            )
-
+                HStack(spacing: 25) {
+                    ForEach(0..<days.count, id: \.self) { index in
+                        VStack(spacing: 8) {
+                            Text(daysDates[index])
+                                .font(.subheadline)
+                                .foregroundColor(index == 2 ? Color.white : Color.gray)
+                            Text(days[index])
+                                .font(.subheadline)
+                                .foregroundColor(index == 2 ? Color.white : Color.gray)
                         }
+                        .background(
+                            RoundedRectangle(cornerRadius: 20)
+                                .foregroundColor(index == 2 ? Color(hex: "F1A800") : Color.clear)
+                                .frame(width: 40 ,height: 60)
+                        )
+                        
                     }
+                }
             }
             .frame(width: 340, height: 152)
             .shadow(color: Color.gray.opacity(0.2), radius: 4, x: 0, y: 5)
-
-
             
+            //MARK: - Duration
             HStack {
                 VStack(alignment: .leading) {
                     Text("From")
-                            .font(.title3)
-                            .fontWeight(.bold)
-                            .padding()
-
+                        .font(.title3)
+                        .fontWeight(.bold)
+                        .padding()
+                    
                     Button(action: {
                         //
                         
@@ -101,9 +94,7 @@ struct AddNote: View {
                             Text("10:00 AM")
                                 .font(.footnote)
                                 .padding(.leading)
-                            
                             Spacer()
-                            
                             Image(systemName: "chevron.down")
                                 .font(.footnote)
                                 .padding(.trailing)
@@ -113,16 +104,14 @@ struct AddNote: View {
                         .background(Color.white)
                         .cornerRadius(8)
                         .shadow(color: Color.gray.opacity(0.2), radius: 4, x: 0, y: 5)
-
                     }
                 }
                 Spacer()
                 VStack(alignment: .leading) {
                     Text("To")
-                            .font(.title3)
-                            .fontWeight(.bold)
-                            .padding()
-
+                        .font(.title3)
+                        .fontWeight(.bold)
+                        .padding()
                     Button(action: {
                         //
                         
@@ -131,9 +120,7 @@ struct AddNote: View {
                             Text("10:00 AM")
                                 .font(.footnote)
                                 .padding(.leading)
-                            
                             Spacer()
-                            
                             Image(systemName: "chevron.down")
                                 .font(.footnote)
                                 .padding(.trailing)
@@ -143,23 +130,17 @@ struct AddNote: View {
                         .background(Color.white)
                         .cornerRadius(8)
                         .shadow(color: Color.gray.opacity(0.2), radius: 4, x: 0, y: 5)
-
                     }
                 }
-
-
-
-
             }
             .padding()
-
+            
+            //MARK: - Title
             Text("Title")
-                    .font(.title3)
-                    .fontWeight(.bold)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding()
-
-                
+                .font(.title3)
+                .fontWeight(.bold)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding()
             TextField("Android App Development", text: $title)
                 .padding(.leading, 10)
                 .foregroundColor(.gray)
@@ -167,31 +148,25 @@ struct AddNote: View {
                 .background(Color(.white))
                 .cornerRadius(10)
                 .shadow(color: Color.gray.opacity(0.2), radius: 4, x: 0, y: 5)
-
-            
-            
             Text("Add Details")
-                    .font(.title3)
-                    .fontWeight(.bold)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding()
-
-                
+                .font(.title3)
+                .fontWeight(.bold)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding()
             TextEditor(text: $dummyDescription)
                 .padding(.leading, 10)
                 .foregroundColor(.gray)
                 .frame(width: 335, height: 99)
                 .background(Color(.white))
                 .cornerRadius(10)
-            
                 .shadow(color: Color.gray.opacity(0.2), radius: 4, x: 0, y: 5)
-
+            
             VStack() {
                 Text("Choose Priority")
                     .fontWeight(.bold)
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding()
-
+                
                 HStack(spacing: 30) {
                     Group {
                         ZStack {
@@ -222,14 +197,10 @@ struct AddNote: View {
                     .fontWeight(.bold)
                     .frame(width: 100, height: 35)
                 }
-                .padding()
+                .padding(.bottom, 35)
 
-
+                
             }
-        
-            
-        
-
         }
     }
 }

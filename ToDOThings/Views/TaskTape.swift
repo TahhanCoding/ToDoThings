@@ -12,8 +12,8 @@ struct TaskTape: View {
     @State var urgent: Bool = false
     @State var label: String = "To do"
     @State var labelColor: Color = .blue
+    
     var body: some View {
-
         VStack {
             HStack {
                 // title
@@ -72,7 +72,6 @@ struct TaskTape: View {
                     .foregroundColor(.red)
                     .font(.footnote)
                 }
-                
                 Spacer()
             }
         }
@@ -81,9 +80,6 @@ struct TaskTape: View {
         .frame(width: 340, height: 71)
         .cornerRadius(5)
         .shadow(color: Color.gray.opacity(0.2), radius: 4, x: 0, y: 5)
-
-
-
     }
 }
 
